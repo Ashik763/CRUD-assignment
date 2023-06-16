@@ -1,10 +1,20 @@
 <?php
 include "dbconnect.php";
 
+
+
 $name=$_POST['f_name'];
 $designation=$_POST['f_designation'];
 $phone=$_POST['f_phone'];
 $date=$_POST['f_date'];
+
+// $email = 	$_SESSION["email"];
+// $password = $_SESSION["password"];
+
+
+// if(empty($email) || empty ($password)){
+// 	header("location:login.php");
+// }
 
 $sql = "INSERT INTO teacher (id, name,designation,phone,date_of_birth) 
 		VALUES (NULL, '$name', '$designation', '$phone','$date')";

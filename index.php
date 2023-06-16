@@ -1,8 +1,17 @@
 <?php
 	include "dbconnect.php";
 	
+	session_start();
 	$s="SELECT * FROM teacher";
 	$result=$conn->query($s);
+
+	$email = $_SESSION["email"];
+	$password = $_SESSION["password"];
+	// echo $_SESSION["email"];
+
+	if(empty($email) || empty ($password)){
+		header("location:login.php");
+	}
 	
 	//echo "<h1>adhhd</h1>";
 	/*
@@ -33,10 +42,22 @@
 			padding:15px;
 			text-align:center;
 		}
+		#logout{
+			position:absolute;
+			right:20px;
+
+		}
 		
 	</style>
 </head>
 <body>	
+<div id="logout" >
+	<?php echo "$email"  ?>	<a href="logout.php" >
+		Logout  </a>
+	
+	
+</div> 
+
 	
 		<center>
 			<h1> Teacher List</h1>

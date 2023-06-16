@@ -8,7 +8,7 @@
 	$phone=$_POST['f_phone'];
 	$date=$_POST['f_date'];
 
-	echo $name,$designation,$phone,$date;
+	// echo $name,$designation,$phone,$date;
 	
 	$sql="UPDATE teacher SET name='$name', designation='$designation' ,
 	phone='$phone', date_of_birth='$date'
